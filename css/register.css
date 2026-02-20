@@ -1,0 +1,57 @@
+/* Register Page Styles */
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f6f9;
+}
+
+.auth-container {
+  display: flex;
+  width: 800px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.auth-left {
+  flex: 1;
+  background: #2e7d32;
+  color: #fff;
+  padding: 30px;
+}
+
+.auth-right {
+  flex: 1;
+  padding: 30px;
+}
+
+.auth-right h2 { margin-bottom: 20px; }
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form label { margin-top: 10px; }
+.register-form input, .register-form select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn {
+  background: #2e7d32;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.btn:hover { background: #1b5e20; }
+
+.switch-auth { margin-top: 15px; }

@@ -1,58 +1,48 @@
-// Shared JavaScript for AgriSmart pages
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Handle Time In/Out buttons
-  const timeInBtn = document.getElementById("timeInBtn");
-  const timeOutBtn = document.getElementById("timeOutBtn");
-
-  if (timeInBtn) {
-    timeInBtn.addEventListener("click", () => {
-      alert("Time In logged successfully!");
-      // Example: update DOM
-      const timeInDisplay = document.querySelector(".main-content p strong");
-      if (timeInDisplay) {
-        timeInDisplay.textContent = "Timed In: " + new Date().toLocaleTimeString();
-      }
-    });
-  }
-
-  if (timeOutBtn) {
-    timeOutBtn.addEventListener("click", () => {
-      alert("Time Out logged successfully!");
-      // Example: update DOM
-      const timeOutDisplay = document.querySelector(".main-content p:nth-of-type(2) strong");
-      if (timeOutDisplay) {
-        timeOutDisplay.textContent = "Time Out: " + new Date().toLocaleTimeString();
-      }
-    });
-  }
-
-  // Handle task completion toggle
-  const tasks = document.querySelectorAll(".main-content ul li");
-  tasks.forEach(task => {
-    task.addEventListener("click", () => {
-      task.classList.toggle("completed");
-      if (task.classList.contains("completed")) {
-        alert(`Task "${task.textContent}" marked as completed.`);
+  // LOGIN FORM HANDLER
+  const loginForm = document.querySelector(".login-form");
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      localStorage.setItem("isLoggedIn", "true");
+      // Example role check
+      const email = loginForm.querySelector("input[type='email']").value;
+      if (email.startsWith("admin@")) {
+        localStorage.setItem("role", "admin");
+        window.location.href = "dashboard.html"; // could be admin-dashboard.html
       } else {
-        alert(`Task "${task.textContent}" marked as pending.`);
+        localStorage.setItem("role", "worker");
+        window.location.href = "dashboard.html"; // could be worker-dashboard.html
       }
     });
-  });
+  }
 
-  // Handle E-Learning course buttons
-  const courseButtons = document.querySelectorAll(".course .btn");
-  courseButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      alert(`Course action: ${btn.textContent}`);
+  // REGISTER FORM HANDLER
+  const registerForm = document.querySelector(".register-form");
+  if (registerForm) {
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Account created successfully! Redirecting to login...");
+      window.location.href = "login.html";
     });
-  });
+  }
 
-  // Optional: highlight active sidebar link
-  const links = document.querySelectorAll(".sidebar a");
-  links.forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add("active");
+  // SESSION CHECK FOR DASHBOARD PAGES
+  const protectedPages = ["dashboard.html", "time-in-out.html", "tasks.html", "attendance.html", "elearning.html"];
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if (protectedPages.includes(currentPage)) {
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    if (!loggedIn) {
+      alert("You must log in first!");
+      window.location.href = "login.html";
     }
-  });
+  }
 });
+
+// LOGOUT REDIRECT FUNCTION
+function redirectLogin() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("role");
+  window.location.href = "login.html";
+}
