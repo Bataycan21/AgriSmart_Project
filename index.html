@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSmart Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">AgriSmart</h2>
+    <nav class="nav">
+      <ul>
+        <li><a href="#" class="nav-link active" data-section="dashboard">My Dashboard</a></li>
+        <li><a href="#" class="nav-link" data-section="time-in-out">Time In/Out</a></li>
+        <li><a href="#" class="nav-link" data-section="my-tasks">My Tasks</a></li>
+        <li><a href="#" class="nav-link" data-section="my-attendance">My Attendance</a></li>
+        <li><a href="#" class="nav-link" data-section="e-learning">E-Learning</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header">
+      <h1>Welcome, Juan Dela Cruz (Worker)</h1>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section class="card section dashboard active">
+      <h2>Today's Attendance</h2>
+      <p><strong>Timed In:</strong> 7:02 AM</p>
+      <p><strong>Time Out:</strong> Pending</p>
+      <p><strong>Status:</strong> Currently Working</p>
+
+      <h2>Assigned Tasks</h2>
+      <ul class="task-list">
+        <li class="task high">Irrigate rice paddies - Section A</li>
+        <li class="task medium completed">Apply fertilizer to corn fields</li>
+        <li class="task low">Check pest traps in vegetable garden</li>
+      </ul>
+
+      <h2>Upcoming Training</h2>
+      <ul>
+        <li>Soil Health Assessment - Feb 22, 2026 (2 hours)</li>
+        <li>Organic Farming Techniques - Feb 25, 2026 (3 hours)</li>
+      </ul>
+
+      <h2>Summary Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat"><strong>18</strong><span>Days Present</span></div>
+        <div class="stat"><strong>2</strong><span>Days Late</span></div>
+        <div class="stat"><strong>12</strong><span>Tasks Completed</span></div>
+        <div class="stat"><strong>5</strong><span>Trainings Done</span></div>
+      </div>
+    </section>
+
+    <!-- Time In/Out Section -->
+    <section class="card section time-in-out">
+      <h2>Time In/Out</h2>
+      <p><strong>Current Time:</strong> 05:29 PM</p>
+      <p><strong>Time In:</strong> 7:02 AM</p>
+      <p><strong>Time Out:</strong> Pending</p>
+      <button class="btn" id="timeInBtn">Time In</button>
+      <button class="btn" id="timeOutBtn">Time Out</button>
+
+      <h3>Recent Logs</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th><th>Time In</th><th>Time Out</th><th>Total Hours</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Feb 20, 2026</td><td>7:02 AM</td><td>--</td><td>In progress</td><td>Active</td></tr>
+          <tr><td>Feb 19, 2026</td><td>7:05 AM</td><td>4:00 PM</td><td>8h 55m</td><td>Completed</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- My Tasks Section -->
+    <section class="card section my-tasks">
+      <h2>My Tasks</h2>
+      <ul class="task-list">
+        <li class="task high">Irrigate Rice Paddies - Section A</li>
+        <li class="task medium completed">Apply Fertilizer to Corn Fields</li>
+        <li class="task low">Check Pest Traps in Vegetable Garden</li>
+      </ul>
+    </section>
+
+    <!-- My Attendance Section -->
+    <section class="card section my-attendance">
+      <h2>My Attendance</h2>
+      <p><strong>Total Days:</strong> 10</p>
+      <p><strong>Present:</strong> 7</p>
+      <p><strong>Late:</strong> 2</p>
+      <p><strong>Absent:</strong> 1</p>
+
+      <table class="table">
+        <thead>
+          <tr><th>Date</th><th>Day</th><th>Time In</th><th>Time Out</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Feb 20</td><td>Thursday</td><td>7:02 AM</td><td>--</td><td>Present</td></tr>
+          <tr><td>Feb 19</td><td>Wednesday</td><td>7:05 AM</td><td>4:00 PM</td><td>Late</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- E-Learning Section -->
+    <section class="card section e-learning">
+      <h2>E-Learning</h2>
+      <div class="course">
+        <h3>Soil Health Assessment Fundamentals</h3>
+        <p>Duration: 2 hours | Modules: 6 | Progress: 100%</p>
+        <button class="btn">Review Course</button>
+      </div>
+      <div class="course">
+        <h3>Organic Farming Techniques</h3>
+        <p>Duration: 3 hours | Modules: 8 | Progress: 63%</p>
+        <button class="btn">Continue</button>
+      </div>
+      <div class="course">
+        <h3>Irrigation Systems & Water Management</h3>
+        <p>Duration: 2.5 hours | Modules: 7 | Progress: 0%</p>
+        <button class="btn">Start Course</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

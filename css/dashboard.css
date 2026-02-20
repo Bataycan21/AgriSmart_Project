@@ -1,0 +1,45 @@
+/* Dashboard Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f4f6f9;
+  color: #333;
+}
+
+.sidebar {
+  width: 220px;
+  background: #2e7d32;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar .logo { font-size: 1.5rem; margin-bottom: 20px; }
+.sidebar a { color: #fff; text-decoration: none; display: block; padding: 10px; border-radius: 5px; }
+.sidebar a.active, .sidebar a:hover { background: #1b5e20; }
+
+.main-content { flex: 1; padding: 20px; }
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ul li.high { background: #ffcdd2; padding: 8px; border-radius: 5px; }
+ul li.medium { background: #fff9c4; padding: 8px; border-radius: 5px; }
+ul li.low { background: #c8e6c9; padding: 8px; border-radius: 5px; }
+ul li.completed { text-decoration: line-through; opacity: 0.6; }
+
+.stats .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.stats .grid div {
+  background: #e8f5e9;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}

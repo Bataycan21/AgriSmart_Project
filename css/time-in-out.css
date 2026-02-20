@@ -1,0 +1,15 @@
+/* Time In/Out Styles */
+body { font-family: Arial, sans-serif; display: flex; background: #f4f6f9; color: #333; }
+
+.sidebar { width: 220px; background: #2e7d32; color: #fff; min-height: 100vh; padding: 20px; }
+.sidebar .logo { font-size: 1.5rem; margin-bottom: 20px; }
+.sidebar a { color: #fff; text-decoration: none; display: block; padding: 10px; border-radius: 5px; }
+.sidebar a.active, .sidebar a:hover { background: #1b5e20; }
+
+.main-content { flex: 1; padding: 20px; }
+.btn { background: #2e7d32; color: #fff; padding: 8px 12px; border: none; border-radius: 5px; margin-right: 5px; cursor: pointer; }
+.btn:hover { background: #1b5e20; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+table th, table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+table th { background: #f0f0f0; }
